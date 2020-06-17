@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Remove="Data\HoofdCategories.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\HoofdCategories.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Data\new.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\new.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\trans.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\trans.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\categ.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\categ.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Data\new3.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\new3.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\new9.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\new9.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Tools\Tools.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Models\HoofdCategorieLijst.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+
+
+</Project>
