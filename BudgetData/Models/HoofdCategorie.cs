@@ -15,7 +15,7 @@ namespace Syntra.Data.Models
         [JsonPropertyName("hc_id")]
         public int ID { get; set; }
 
-        public List<SubCategorie> SubCats { get; set; } = new List<SubCategorie>();
+        public List<SubCategorie> SubCats { get; set; }
         public bool Deleted;
 
 

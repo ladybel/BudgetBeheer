@@ -58,7 +58,27 @@ namespace WpfBudgetBeheer.ViewModel
 			}
 			set => TrPostLijst.Members = value.ToList();
 		}
-		public TransactiePost CurrentTP { get => _currentTP; set { _currentTP = value; RaisePropertyChanged("CurrentTP"); } }
+		public TransactiePost CurrentTP 
+		{
+			get 
+			{
+				if (_currentTP != null) { 
+				if (_currentTP.SubCat == null)
+				{
+
+					//	_currentTP.SubCat = _currentTP.HoofdCat.SubCats[0];
+					
+					
+				}
+			}
+				return _currentTP;
+			}
+			set 
+			{ 
+				_currentTP = value; 
+				RaisePropertyChanged("CurrentTP"); 
+			} 
+		}
 
 		public HoofdCategorieLijst HoofdCatLijst { get { _hcLijst ??= new HoofdCategorieLijst(); return _hcLijst; } set => _hcLijst = value; }
 
@@ -215,7 +235,7 @@ namespace WpfBudgetBeheer.ViewModel
 
 		public void ResetTPList()
 		{
-			CurrentTP = null;
+			//CurrentTP = null;
 			
 			TPCollectie.Clear();
 			foreach (var tp in TrPostLijst.Members) { TPCollectie.Add(tp); }
@@ -235,10 +255,10 @@ namespace WpfBudgetBeheer.ViewModel
 		internal void VulData()
 		{
 			TrPostLijst.VulData();
-			ResetTPList();
+			//ResetTPList();
 			HoofdCatLijst.VulData();
-			ResetSCList();
-			ResetHCList();
+			//ResetSCList();
+			//ResetHCList();
 
 
 		}

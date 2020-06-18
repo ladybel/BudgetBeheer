@@ -30,19 +30,20 @@ namespace WpfBudgetBeheer
 		TransactieViewModel _trViewModel = null;
 		trViewM _viewmod = null;
 
-		public CategorieViewModel CatViewModel 
-		{ get { _catViewModel ??= new CategorieViewModel(); return _catViewModel; } 
-		  set => _catViewModel = value; 
+		public CategorieViewModel CatViewModel
+		{
+			get { _catViewModel ??= new CategorieViewModel(); return _catViewModel; }
+			set => _catViewModel = value;
 		}
-		
-		
-		
+
+
+
 		public TransactieViewModel TrViewModel
 		{
 			get { _trViewModel ??= new TransactieViewModel(); return _trViewModel; }
 			set => _trViewModel = value;
 		}
-		public trViewM ViewMod 
+		public trViewM ViewMod
 		{
 			get { _viewmod ??= new trViewM(); return _viewmod; }
 			set => _viewmod = value;
@@ -83,7 +84,7 @@ namespace WpfBudgetBeheer
 
 		private void ExportButton_Click(object sender, RoutedEventArgs e)
 		{
-			
+
 			SaveFileDialog saveDlg = new SaveFileDialog()
 			{
 				Filter = "Json files (*.json)|*.json|All files (*.*)|*.*"
@@ -92,7 +93,7 @@ namespace WpfBudgetBeheer
 			{
 				CatViewModel.ExportToFile(saveDlg.FileName);
 			}
-			
+
 			/*CatViewModel.ExportToFile(CatViewModel.HoofdCatLijst.categ);
 			TrViewModel.ExportToFile(TrViewModel.TrPostLijst.trans);*/
 			SaveFileDialog saveDlg1 = new SaveFileDialog()
@@ -101,7 +102,7 @@ namespace WpfBudgetBeheer
 			};
 			if (saveDlg.ShowDialog() == true)
 			{
-				TrViewModel.ExportToFile(saveDlg.FileName);
+				ViewMod.ExportToFile(saveDlg.FileName);
 			}
 		}
 
@@ -123,11 +124,11 @@ namespace WpfBudgetBeheer
 		private void AddHCButton_Click(object sender, RoutedEventArgs e)
 		{
 			var now = DateTime.Now.Date;
-			
+
 			//CatViewModel.addSubCategorie("Corona", "Handschoenen");
 			TrViewModel.addTransactiePost(DateTime.Now, "Salarissen", "Loon", 0, 1550.25);
 			TrViewModel.addTransactiePost(DateTime.Now, "Vaste Kost Woning", "Huur", 469, 0);
-			TrViewModel.addTransactiePost(DateTime.Now, "Nutsvoorzieningen", "Electriciteit", 0,40.50);
+			TrViewModel.addTransactiePost(DateTime.Now, "Nutsvoorzieningen", "Electriciteit", 0, 40.50);
 			TrViewModel.addTransactiePost(DateTime.Now, "Nutsvoorzieningen", "Internet", 0, 27.80);
 		}
 
@@ -136,22 +137,16 @@ namespace WpfBudgetBeheer
 		private void DeleteTransactieButton_Click(object sender, RoutedEventArgs e)
 		{
 
-				//TrViewModel.deleteTransactiePost(TrViewModel.CurrentTP);
+			//TrViewModel.deleteTransactiePost(TrViewModel.CurrentTP);
 
 		}
 
 
 		private void EditTransactieButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (ViewMod.CurrentTP != null)
-			{
-				//if (ViewMod.CurrSCLijst != null) { }
-				//ViewMod.CurrSCLijst = ViewMod.CurrentTP.HoofdCat.SubCats;
-				//ViewMod.CurrSCLijst = new List<string>();
-				//foreach (var sc in hc.SubCats) { ViewMod.CurrSCLijst.Add(sc.Naam); }
-				//ViewMod.SCCollectieNaam = new ObservableCollection<string>(ViewMod.CurrSCLijstNaam);
+			if (ViewMod.CurrentTP != null) { }
 
-			}
 		}
 	}
-}	
+}
+

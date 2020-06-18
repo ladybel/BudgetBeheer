@@ -106,5 +106,19 @@
         "Naam": "Ziekte"
       }
     ]
+  },
+  {
+    "hc_naam": "Corona",
+    "hc_id": 700,
+    "SubCats": [
+      {
+        "ID": 701,
+        "Naam": "Maskers"
+      },
+      {
+        "ID": 702,
+        "Naam": "Handschoenen"
+      }
+    ]
   }
 ]

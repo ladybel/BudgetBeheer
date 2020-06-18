@@ -7,43 +7,35 @@ using Syntra.Data;
 
 namespace Syntra.Data.Models
 {
-    //  public enum SCType { id, naam }
-    public class SubCategorie
+  //  public enum SCType { id, naam }
+    public class SubCategorie2
     {
-
+              
         public int ID { get; set; }
         public string Naam { get; set; }
-
+        
         public bool Deleted;
+       
 
-
-        public SubCategorie()
+        public SubCategorie2()
         {
 
-
-        }
-        public override bool Equals(object obj)
-        {
             
-            if (obj is SubCategorie sb)
-            {
-                return sb.ID == ID;
-            }
-            return base.Equals(obj);
         }
-        public SubCategorie(int id, string naam)
+
+        public SubCategorie2(int id,string naam)
         {
             ID = id;
             Naam = naam;
             Deleted = false;
-
+            
 
         }
-        public int hc_id()
+        public int hc_id ()
         {
             return ID % 100;
         }
-
+        
         public bool Rename(string naam)
         {
             Naam = naam;
@@ -52,9 +44,9 @@ namespace Syntra.Data.Models
         public bool Deactivate()
         {
             return Deleted = true;
-
+            
         }
-        public override string ToString() => Naam;
+
 
     }
 }

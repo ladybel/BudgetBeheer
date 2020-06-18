@@ -14,6 +14,8 @@ namespace Syntra.Data.Models
         public DateTime Datum { get; set; }
         public SubCategorie SubCat { get; set; }
         public HoofdCategorie HoofdCat { get; set; }
+        
+       
         public string Comment { get; set; }
         //[JsonPropertyName("tr_debet")]
         public double Debet { get; set; }
@@ -29,27 +31,28 @@ namespace Syntra.Data.Models
         {
             string ds= datum.ToShortDateString();
             ID = id;
-            Datum = datum;            
-            SubCat = subcat;
+            Datum = datum;                      
             HoofdCat = hoofdcat;
+            SubCat = subcat;
             Comment = comment;
             Debet = debet;
             Credit = credit;
             DatumString = ds;
         }
-        public TransactiePost(int id, DateTime datum, string subcat,string hoofdcat, string comment, double debet, double credit)
+        /*public TransactiePost(int id, DateTime datum, string subcat,string hoofdcat, string comment, double debet, double credit)
         {
             string ds = datum.ToShortDateString();
             ID = id;
             Datum = datum;
-           // SubCat = subcat;
+             HoofdCat= hoofdcat;
+            SubCat = subcat;
             Comment = comment;
             Debet = debet;
             Credit = credit;
             DatumString = ds;
         }
 
-
+    */
 
     }
 }
